@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:19:58 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/19 17:09:05 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/19 19:39:13 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = find_start(s1, set);
 	end = find_end(s1, set);
+	if (end < start)
+	{
+		str = (char *)malloc(1);
+		*str = 0;
+		return (str);
+	}
 	str = (char *)malloc(sizeof(char) * ((end - start) + 2));
 	if (!str)
 		return (NULL);
