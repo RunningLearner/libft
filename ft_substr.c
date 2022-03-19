@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 17:43:39 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/18 17:43:56 by seunam           ###   ########.fr       */
+/*   Created: 2022/03/18 17:46:33 by seunam            #+#    #+#             */
+/*   Updated: 2022/03/18 17:46:37 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	idx;
 
+	if (!s)
+		return (NULL);
+	str = malloc(sizeof(char) *( + 1));
+	if (!str)
+		return (NULL);
 	idx = 0;
-	while (idx < n && s[idx] != 0)
+	while (s[idx + start])
 	{
-		if ((unsigned char)s[idx] == (unsigned char)c)
-			return (&s[idx]);
+		str[idx] = s[start + idx]; 
 		idx ++;
+		if (idx < len)
+			break;
 	}
-	return (0);
+	str[idx] = 0;
+	return (str);
 }
