@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:46:13 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/18 17:46:15 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/21 17:17:32 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t idx;
+	size_t	idx;
 
 	if (n == 0)
 		return (0);

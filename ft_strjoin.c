@@ -6,7 +6,7 @@
 /*   By: seunam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:21:17 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/19 12:46:21 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/21 17:17:13 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[idx++] = s2++;
 	}
 	str[idx] = 0;
-	return(str);
+	return (str);
 }

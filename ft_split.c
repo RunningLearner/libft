@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:58:37 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/20 18:02:11 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/21 17:16:18 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static size_t	count_words(char *s, char c)
 {
 	size_t	cnt;
-	size_t idx;
+	size_t	idx;
 
 	idx = 0;
 	cnt = 0;

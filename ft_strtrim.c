@@ -6,13 +6,13 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:19:58 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/19 19:39:13 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/21 17:25:02 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen(char *str);
+static size_t	ft_strlen(char *str)
 {
 	size_t	len;
 
@@ -24,8 +24,8 @@ static size_t	ft_strlen(char *str);
 
 static size_t	find_start(char *s1, char set)
 {
-	size_t start;
-	size_t idx;
+	size_t	start;
+	size_t	idx;
 
 	start = 0;
 	if (!set)
@@ -46,8 +46,8 @@ static size_t	find_start(char *s1, char set)
 
 static size_t	find_end(char *s1, char set)
 {
-	size_t end;
-	size_t idx;
+	size_t	end;
+	size_t	idx;
 
 	end = ft_strlen(s1) - 1;
 	if (!set)
@@ -66,6 +66,13 @@ static size_t	find_end(char *s1, char set)
 	return (end);
 }
 
+static char	*alltrim(char *str)
+{
+	str = (char *)malloc(1);
+	*str = 0;
+	return (str);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
@@ -78,11 +85,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	if (end < start)
-	{
-		str = (char *)malloc(1);
-		*str = 0;
-		return (str);
-	}
+		return (alltrim(str));
 	str = (char *)malloc(sizeof(char) * ((end - start) + 2));
 	if (!str)
 		return (NULL);

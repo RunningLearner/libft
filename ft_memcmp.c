@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:44:24 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/18 17:44:36 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/21 17:15:58 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (s1[idx] != s2[idx])
 			return ((unsigned char)s1[idx] - (unsigned char)s2[idx]);
-		idx ++;	
+		idx ++;
 	}
 	return (0);
 }
