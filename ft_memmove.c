@@ -6,7 +6,7 @@
 /*   By: seunam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:20:17 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/14 16:24:25 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/23 18:09:45 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	idx;
+	unsigned char	*ddst;
+	unsigned char	*ssrc;
 
+	ddst = (unsigned char *)dst;
+	ssrc = (unsigned char *)src;
 	idx = 0;
 	if (src > dst)
 	{
 		while (idx < len)
 		{
-			dst[idx] = src[idx];
+			ddst[idx] = ssrc[idx];
 			idx ++;
 		}
 	}
@@ -29,7 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len)
 		{
-			dst[len - 1] = src[len - 1];
+			ddst[len - 1] = ssrc[len - 1];
 			len --;
 		}
 	}

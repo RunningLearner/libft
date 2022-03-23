@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:07:10 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/22 14:41:27 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/23 18:50:23 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	digits(int n)
 	return (cnt);
 }
 
-static char	*ft_putnbr(char *str, size_t len)
+static char	*ft_putnbr_(char * str, int n, size_t len)
 {
 	if (n == 0)
 	{
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str = ft_putnbr(str, len);
+	str = ft_putnbr_(str, n, len);
 	str[len] = 0;
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:39:44 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 16:42:23 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/23 18:51:03 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_putendl_fd(char *s, int fd)
 		return ;
 	while (*s)
 	{
-		write(fd, s, 1)
+		write(fd, s, 1);
 		s++;
 	}
-	write(fd, "\n", 1)
+	write(fd, "\n", 1);
 }

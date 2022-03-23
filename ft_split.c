@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:58:37 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/21 17:16:18 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/23 18:48:10 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*put_word(char *s, char c, size_t sidx)
 	char	*str;
 	size_t	idx;
 
-	idx = 0;
+	idx = sidx;
 	while (s[idx] && s[idx] != c)
 		idx ++;
 	str = (char *)malloc(sizeof(char) * (idx + 1));
@@ -47,7 +47,7 @@ static char	*put_word(char *s, char c, size_t sidx)
 	idx = 0;
 	while (s[idx] && s[idx] != c)
 	{
-		str[idx] = s[idx];
+		str[idx] = s[sidx++];
 		idx ++;
 	}
 	str[idx] = 0;
@@ -74,17 +74,19 @@ char	**ft_split(char const *s, char c)
 	size_t	sidx;
 	size_t	stridx;
 
-	str = (char **)malloc(sizeof(char *) * (countwords(s, c) + 1));
+	str = (char **)malloc(sizeof(char *) * (count_words((char *)s, c) + 1));
 	if (!str)
 		return (NULL);
+	sidx = 0;
+	stridx = 0;
 	while (s[sidx])
 	{
 		if (s[sidx] != c && sidx == 0)
-			str[stridx++] = put_word(s, c, sidx);
+			str[stridx++] = put_word((char *)s, c, sidx);
 		if (s[sidx] == c)
 		{
 			if (s[sidx + 1] != c && s[sidx + 1])
-				str[stridx++] = put_word(s, c, sidx + 1);
+				str[stridx++] = put_word((char *)s, c, sidx + 1);
 		}
 		if (stridx >= 1 && !str[stridx - 1])
 			return (mal_error(str));

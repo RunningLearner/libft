@@ -6,11 +6,11 @@
 /*   By: seunam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:51:43 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/14 16:57:21 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/23 19:04:22 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	idx;
 	size_t	srclen;
@@ -19,13 +19,17 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	srclen = 0;
 	while (src[srclen])
 		srclen ++;
+	dstlen = 0;
 	while (dst[dstlen])
 		dstlen ++;
-	idx = 0;
 	if (dstsize < dstlen)
 		return (srclen + dstsize);
-	while (idx < dstsize)
+	idx = 0;
+	while (idx < dstsize || idx + dstlen < dstlen)
 	{
+		dst[dstlen + idx] = src[idx];
+		idx ++;
 	}
+	dst[idx] = 0;
 	return (srclen + dstlen);
 }
