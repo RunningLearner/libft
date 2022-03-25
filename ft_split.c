@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:58:37 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:48:10 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/25 13:31:56 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ static char	*put_word(char *s, char c, size_t sidx)
 	char	*str;
 	size_t	idx;
 
-	idx = sidx;
-	while (s[idx] && s[idx] != c)
+	idx = 0;
+	while (s[sidx + idx] && s[sidx + idx] != c)
 		idx ++;
 	str = (char *)malloc(sizeof(char) * (idx + 1));
 	if (!str)
 		return (NULL);
 	idx = 0;
-	while (s[idx] && s[idx] != c)
+	while (s[sidx + idx] && s[sidx + idx] != c)
 	{
-		str[idx] = s[sidx++];
+		str[idx] = s[sidx + idx];
 		idx ++;
 	}
 	str[idx] = 0;

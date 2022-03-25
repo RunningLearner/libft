@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:42:57 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:52:28 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/25 14:35:06 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == 2147483638)
+	if (n == -2147483648)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		write(fd, "8", 1);
 		return ;
 	}
-	else if (n < 0)
+	if (n < 0)
 	{
 		write(fd, "-", 1);
 		n *= -1;
