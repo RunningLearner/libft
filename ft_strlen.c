@@ -6,13 +6,13 @@
 /*   By: seunam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:48 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:13:55 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/24 15:38:16 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	cnt;
 

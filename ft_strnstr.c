@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:46:20 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:28:11 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/25 10:51:10 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	idx;
 	size_t	idx2;
 
-	if (needle == 0)
+	if (*needle == 0)
 		return ((char *)haystack);
 	idx = 0;
 	while (haystack[idx] && idx < len)

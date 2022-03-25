@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:19:58 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:59:03 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/25 12:29:41 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,22 @@ static size_t	find_start(char *s1, char *set)
 	size_t	idx;
 
 	start = 0;
-	if (!set)
+	if (*set == 0)
 		return (start);
 	while (s1[start])
 	{
 		idx = 0;
 		while (set[idx])
 		{
-			if (!(s1[start] == set[idx]))
-				return (start);
+			if (set[idx] == s1[start])
+				break ;
 			idx ++;
+			if (!set[idx])
+				return (start);
 		}
 		start ++;
 	}
-	return (0);
+	return (start - 1);
 }
 
 static size_t	find_end(char *s1, char *set)
@@ -49,18 +51,24 @@ static size_t	find_end(char *s1, char *set)
 	size_t	end;
 	size_t	idx;
 
+	if (!s1[0])
+		return (0);
 	end = ft_strlen_(s1) - 1;
-	if (!set)
+	if (*set == 0)
 		return (end);
-	while (s1[end])
+	while (end >= 0)
 	{
 		idx = 0;
 		while (set[idx])
 		{
-			if (!(s1[end] == set[idx]))
-				return (end);
+			if (s1[end] == set[idx])
+				break ;
 			idx ++;
+			if (!set[idx])
+				return (end);
 		}
+		if (end == 0)
+			return (0);
 		end --;
 	}
 	return (end);

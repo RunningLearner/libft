@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:43:39 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:23:32 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/24 15:54:16 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	ss = (unsigned char *)s;
 	idx = 0;
-	while (idx < n && ss[idx] != 0)
+	while (idx < n)
 	{
 		if (ss[idx] == (unsigned char)c)
-			return ((void *)&s[idx]);
+			return (&ss[idx]);
 		idx ++;
 	}
 	return (0);
