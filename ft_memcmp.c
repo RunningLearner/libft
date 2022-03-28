@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:44:24 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:26:21 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/28 14:30:27 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	idx;
+	size_t			idx;
 	unsigned char	*ss1;
 	unsigned char	*ss2;
 

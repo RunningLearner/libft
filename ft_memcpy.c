@@ -6,7 +6,7 @@
 /*   By: seunam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:12:00 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:07:40 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/28 14:31:11 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	idx;
+	size_t			idx;
 	unsigned char	*ddst;
 	unsigned char	*ssrc;
 

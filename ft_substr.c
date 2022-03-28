@@ -6,13 +6,13 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:46:33 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/25 11:17:17 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/28 14:33:05 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*startbigger()
+static char	*startbigger(void)
 {
 	char	*str;
 

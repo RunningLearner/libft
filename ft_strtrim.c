@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:19:58 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/25 12:29:41 by seunam           ###   ########.fr       */
+/*   Updated: 2022/03/28 14:32:45 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static size_t	find_end(char *s1, char *set)
 	return (end);
 }
 
-static char	*alltrim()
+static char	*alltrim(void)
 {
 	char	*str;
 
