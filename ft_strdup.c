@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:46:00 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/23 18:31:51 by seunam           ###   ########.fr       */
+/*   Updated: 2022/04/07 15:13:59 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 	len = 0;
 	while (s[len])
 		len ++;
-	dup = (char *)malloc(sizeof(char) * (len + 1));
+	dup = malloc(sizeof(char) * (len + 1));
 	if (!dup)
 		return (NULL);
 	idx = 0;

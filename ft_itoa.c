@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:07:10 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/25 14:17:31 by seunam           ###   ########.fr       */
+/*   Updated: 2022/04/07 15:13:56 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	size_t	len;
 
 	len = digits(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	str = ft_putnbr_(str, n, len);
