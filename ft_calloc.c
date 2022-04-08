@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:43:22 by seunam            #+#    #+#             */
-/*   Updated: 2022/03/30 12:47:14 by seunam           ###   ########.fr       */
+/*   Updated: 2022/04/08 00:53:45 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*ptr;
-	size_t			tot;
 	size_t			idx;
 
+	if (count == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
 	ptr = malloc(size * count);
 	if (!ptr)
 		return (NULL);
-	tot = count * size;
 	idx = 0;
-	while (idx < tot)
+	while (idx < size * count)
 	{
 		ptr[idx] = 0;
 		idx ++;
