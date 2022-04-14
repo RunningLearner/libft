@@ -6,7 +6,7 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:58:37 by seunam            #+#    #+#             */
-/*   Updated: 2022/04/14 17:31:52 by seunam           ###   ########.fr       */
+/*   Updated: 2022/04/14 17:51:30 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static char	**do_split(char const *s, char c, char **str)
 {
 	size_t	sidx;
 	size_t	stridx;
-	
+
 	sidx = 0;
 	stridx = 0;
 	while (s[sidx])
@@ -99,6 +99,6 @@ char	**ft_split(char const *s, char c)
 	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!str)
 		return (NULL);
-	do_split(s, c, str);
+	str = do_split(s, c, str);
 	return (str);
 }
