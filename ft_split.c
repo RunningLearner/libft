@@ -6,13 +6,13 @@
 /*   By: seunam <seunam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:58:37 by seunam            #+#    #+#             */
-/*   Updated: 2022/04/07 15:13:58 by seunam           ###   ########.fr       */
+/*   Updated: 2022/04/14 17:31:52 by seunam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	cnt;
 	size_t	idx;
@@ -68,15 +68,11 @@ static char	**mal_error(char **str)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**do_split(char const *s, char c, char **str)
 {
-	char	**str;
 	size_t	sidx;
 	size_t	stridx;
-
-	str = malloc(sizeof(char *) * (count_words((char *)s, c) + 1));
-	if (!str)
-		return (NULL);
+	
 	sidx = 0;
 	stridx = 0;
 	while (s[sidx])
@@ -84,14 +80,25 @@ char	**ft_split(char const *s, char c)
 		if (s[sidx] != c && sidx == 0)
 			str[stridx++] = put_word((char *)s, c, sidx);
 		if (s[sidx] == c)
-		{
 			if (s[sidx + 1] != c && s[sidx + 1])
 				str[stridx++] = put_word((char *)s, c, sidx + 1);
-		}
 		if (stridx >= 1 && !str[stridx - 1])
 			return (mal_error(str));
 		sidx ++;
 	}
 	str[stridx] = NULL;
+	return (str);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**str;
+
+	if (s == 0)
+		return (NULL);
+	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!str)
+		return (NULL);
+	do_split(s, c, str);
 	return (str);
 }
