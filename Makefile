@@ -6,7 +6,7 @@
 #    By: seunam <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 17:31:24 by seunam            #+#    #+#              #
-#    Updated: 2022/04/03 17:31:28 by seunam           ###   ########.fr        #
+#    Updated: 2022/05/09 16:52:51 by seunam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,5 +32,7 @@ clean:
 	$(RM) $(OBJS)
 fclean:clean
 	$(RM) $(NAME)
-re:fclean $(NAME)
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 .PHONY:all clean fclean re
